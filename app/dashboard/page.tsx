@@ -1,6 +1,6 @@
 import Button from '@mui/material/Button';
 
-export default function Home() {
+export default function Demo() {
   return (
     <div>
       {/* <h1 style={{ fontSize: '2rem', marginBottom: '1rem' }}>欢迎来到日语学习应用</h1> */}
