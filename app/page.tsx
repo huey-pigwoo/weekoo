@@ -1,17 +1,34 @@
-import Button from '@mui/material/Button';
+'use client';
 
-export default function Home() {
+import dynamic from 'next/dynamic';
+import { Box, CircularProgress } from '@mui/material';
+
+// 使用 NoSSR 包装的主页面组件
+const HomePage = dynamic(
+  () => import('./components/HomePage'),
+  {
+    ssr: false,
+    loading: () => (
+      <Box 
+        component="div"
+        sx={{ 
+          display: 'flex', 
+          justifyContent: 'center', 
+          alignItems: 'center', 
+          height: '100vh',
+          width: '100vw'
+        }}
+      >
+        <CircularProgress />
+      </Box>
+    )
+  }
+);
+
+export default function Page() {
   return (
-    <div>
-      {/* <h1 style={{ fontSize: '2rem', marginBottom: '1rem' }}>欢迎来到日语学习应用</h1> */}
-      <p style={{ marginBottom: '2rem' }}>
-        {/* 这是一个帮助您学习日语词汇、语法和进行测验的应用。 */}
-        选择以下模块开始：
-      </p>
-      <div style={{ display: 'flex', gap: '2rem' }}>
-        <Button variant="contained">Hello world</Button>;
-          <h2>Hiragana Char &rarr;</h2>
-      </div>
-    </div>
+    <Box component="div">
+      <HomePage />
+    </Box>
   );
 }
