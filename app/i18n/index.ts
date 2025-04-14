@@ -13,3 +13,5 @@ const messages = {
     // ...其他翻译
   }
 }; 
+
+console.log('messages', messages);

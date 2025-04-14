@@ -22,8 +22,7 @@ import {
   katakana,
   FullHiraganaDataWithDiacritics,
   hiraganaWithDiacritics,
-  katakanaWithDiacritics,
-  DiacriticsRow,
+  katakanaWithDiacritics
 } from "./data";
 
 export default function HiraganaPage() {

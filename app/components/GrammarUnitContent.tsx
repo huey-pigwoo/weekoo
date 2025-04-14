@@ -5,10 +5,7 @@ import {
   Box,
   Typography,
   Paper,
-  Divider,
-  List,
-  ListItem,
-  ListItemText,
+  Divider
 } from "@mui/material";
 import { grammarUnits, GrammarUnit } from "../grammar/data";
 

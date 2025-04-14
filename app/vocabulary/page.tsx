@@ -1,11 +1,5 @@
 "use client";
-
-export default function Page(props: any) {
-
-    console.log('props', props);
-    return (
-        <div>
-            單詞單元
-        </div>
-    )
+export default function Page(props: unknown) {
+    console.log("props", props);
+    return <div>單詞單元</div>;
 }

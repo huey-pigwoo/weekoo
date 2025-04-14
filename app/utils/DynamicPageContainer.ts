@@ -7,10 +7,15 @@ const HiraganaPage = React.lazy(() => import('./hiragana/page'));
 const VocabularyPage = React.lazy(() => import('./vocabulary/page'));
 const NotFoundPage = React.lazy(() => import('./404'));
 
-export default function DynamicPageContainer({ router }: { router: any }) {
+interface DynamicPageContainerProps {
+  router: {
+    pathname: string;
+  };
+}
+
+export default function DynamicPageContainer({ router }: DynamicPageContainerProps) {
   const { pathname } = router;
 
-  // 根据路由动态选择组件
   let PageComponent;
   switch (pathname) {
     case '/hiragana':
@@ -26,7 +31,6 @@ export default function DynamicPageContainer({ router }: { router: any }) {
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      {/* 渲染动态加载的组件 */}
       <PageComponent />
     </Suspense>
   );

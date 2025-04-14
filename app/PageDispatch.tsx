@@ -37,7 +37,7 @@ function LoadingComponent() {
   );
 }
 
-export default function PageDispatch(router: any, nav: any) {
+export default function PageDispatch(router: any) {
   const { pathname } = router;
   
   // 提取 unit 值
